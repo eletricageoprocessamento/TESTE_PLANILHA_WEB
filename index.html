@@ -40,14 +40,18 @@ Fluxo DIA 20/02/26
     <small>Turma 91539 • Engº Rafael Bispo — Mestre em Computação</small>
   </footer>
 
-  <script>
-    const base = "LINK_PUBHTML_AQUI"; // precisa ser /d/e/.../pubhtml
+<script>
+    // Substitua o texto abaixo pelo link real da sua planilha publicada
+    const base = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS-P0Un8tQjs0QyaxlQvxXc8A1cvbpVTHzPa9IghYSmj8GZGWE3cIkjDSIc4vSRcA/pubhtml"; 
+    
+    // Isso gera um "cache-buster" para a planilha atualizar sempre que a página recarregar
     const url = base + (base.includes("?") ? "&" : "?") + "t=" + Date.now();
     document.getElementById("planilha").src = url;
     document.getElementById("linkPlanilha").href = base;
-  </script>
+</script>
 </body>
 </html>
+
 
 
 
