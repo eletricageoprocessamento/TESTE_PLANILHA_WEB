@@ -27,28 +27,57 @@ NORMAS
 
 
 
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Memorial de Cálculo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>SGF — Dashboard de Fiscalização (Planilha)</title>
+  <meta name="description" content="Dashboard web simples para visualizar uma planilha do SGF no navegador via GitHub Pages." />
 </head>
 
 <body>
-  <h2>Memorial de Cálculo</h2>
+  <header>
+    <h1>SGF — Dashboard de Fiscalização</h1>
+    <p>Visualização da planilha publicada no Google Sheets.</p>
+  </header>
 
- 
-  <iframe
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBkcD3RgBsoRui0JZYepmQXT5hes2kWThZCq8sojxlupX_kZbkuijLPg_fLjduLPWF7Mbnq0RJ4m-A/pubhtml#gid=2121704344"
-    width="100%"
-    height="500">
-  </iframe>
+  <main>
+    <h2>Memorial de Cálculo</h2>
 
+    <iframe
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBkcD3RgBsoRui0JZYepmQXT5hes2kWThZCq8sojxlupX_kZbkuijLPg_fLjduLPWF7Mbnq0RJ4m-A/pubhtml#gid=2121704344"
+      id="planilha"
+      width="100%"
+      height="650"
+      style="border: 0;"
+      loading="lazy"
+      title="Planilha SGF publicada"
+    ></iframe>
+
+    <p>
+      Se não carregar, abra em nova aba:
+      <a id="linkPlanilha" target="_blank" rel="noopener noreferrer">Abrir planilha</a>
+    </p>
+  </main>
+
+  <footer>
+    <small>Turma 91539 • Engº Rafael Bispo — Mestre em Computação</small>
+  </footer>
+
+  <script>
+    const base = "LINK_PUBHTML_AQUI"; // precisa ser /d/e/.../pubhtml
+    const url = base + (base.includes("?") ? "&" : "?") + "t=" + Date.now();
+    document.getElementById("planilha").src = url;
+    document.getElementById("linkPlanilha").href = base;
+  </script>
 </body>
-
 </html>
+
+
+
+
+
 
 
